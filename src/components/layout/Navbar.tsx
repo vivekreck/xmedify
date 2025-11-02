@@ -1,5 +1,6 @@
 import type React from "react";
 import logo from "../../assets/icons/logo.png";
+import { Button } from "../common/Button";
 
 export const Navbar = () => {
   return (
@@ -41,7 +42,7 @@ export const Navbar = () => {
             </a>
           </li>
           <li style={styles.navbarItem}>
-            <button style={styles.navbarButton}>My Bookings</button>
+            <Button>My Bookings</Button>
           </li>
         </ul>
       </div>
@@ -58,7 +59,6 @@ const styles: {
   navbarMenu: React.CSSProperties;
   navbarItem: React.CSSProperties;
   navbarLink: React.CSSProperties;
-  navbarButton: React.CSSProperties;
 } = {
   navbar: {
     // backgroundColor: "#E8F1FF78",
@@ -72,7 +72,7 @@ const styles: {
     justifyContent: "space-between",
     alignItems: "center",
     width: "100%",
-    padding: "0 50px",
+    margin: "0 100px",
   },
   navbarLogo: {
     textDecoration: "none",
@@ -107,13 +107,5 @@ const styles: {
     textDecoration: "none",
     padding: "0.5rem 1rem",
     transition: "all 0.3s ease",
-  },
-  navbarButton: {
-    background: "#2AA8FF",
-    color: "#fff",
-    padding: "10px 15px",
-    border: "none",
-    borderRadius: "8px",
-    cursor: "pointer",
   },
 };

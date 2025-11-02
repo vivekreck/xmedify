@@ -21,5 +21,6 @@ const styles: { infoBanner: React.CSSProperties } = {
     backgroundColor: "#2AA8FF",
     width: "100%",
     color: "white",
+    fontSize: "14px",
   },
 };
