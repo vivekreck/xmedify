@@ -1,22 +1,10 @@
-import { type FC, type CSSProperties } from "react";
+import { type FC, type ReactNode } from "react";
+import styles from "./Button.module.css";
 
 interface ButtonProps {
-  children: string;
+  children: ReactNode;
 }
 
 export const Button: FC<ButtonProps> = ({ children }) => {
-  return <button style={styles.button}>{children}</button>;
-};
-
-const styles: {
-  button: CSSProperties;
-} = {
-  button: {
-    background: "#2AA8FF",
-    color: "#fff",
-    padding: "10px 15px",
-    border: "none",
-    borderRadius: "8px",
-    cursor: "pointer",
-  },
+  return <button className={styles.button}>{children}</button>;
 };

@@ -1,0 +1,9 @@
+.infoBanner {
+  margin-top: 0;
+  padding: 10px;
+  text-align: center;
+  background-color: #2aa8ff;
+  width: 100%;
+  color: white;
+  font-size: 14px;
+}
