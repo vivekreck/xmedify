@@ -15,11 +15,11 @@ export const QuickAccess = () => {
   }
 
   const quickAccessItems = [
-    { icon: <DoctorsIcon />, title: "Doctors" },
-    { icon: <LabsIcon />, title: "Labs" },
-    { icon: <HospitalsIcon />, title: "Hospitals" },
-    { icon: <MedicalStoreIcon />, title: "Medical Store" },
-    { icon: <AmbulanceIcon />, title: "Ambulance" },
+    { icon: <DoctorsIcon />, title: "Doctors", isActive: false },
+    { icon: <LabsIcon />, title: "Labs", isActive: false },
+    { icon: <HospitalsIcon />, title: "Hospitals", isActive: true },
+    { icon: <MedicalStoreIcon />, title: "Medical Store", isActive: false },
+    { icon: <AmbulanceIcon />, title: "Ambulance", isActive: false },
   ];
 
   return (
@@ -37,7 +37,7 @@ export const QuickAccess = () => {
       <div className={styles.quickAccessTitle}>You may be looking for</div>
       <div className={styles.cardsContainer}>
         {quickAccessItems.map((item, index) => (
-          <QuickAccessCards key={index} icon={item.icon} title={item.title} />
+          <QuickAccessCards key={index} icon={item.icon} title={item.title} isActive={item.isActive} />
         ))}
       </div>
     </section>
