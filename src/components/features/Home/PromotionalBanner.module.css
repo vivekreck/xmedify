@@ -1,0 +1,92 @@
+.carouselContainer {
+  position: relative;
+  width: 100%;
+  max-width: 80%;
+  margin: 150px auto 0 auto;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.carouselWrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.carouselSlide {
+  flex: 0 0 calc(100% / 3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carouselTrack {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.promotionalImage {
+  width: 90%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* Navigation Dots */
+.carouselDots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #d0d0d0;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.dot.active {
+  background-color: #4dd4ff;
+  box-shadow: 0 0 0 4px #fff, 0 0 0 5px #4dd4ff;
+}
+
+/* Arrow Navigation */
+.carouselArrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.9);
+  border: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  font-size: 28px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10;
+  color: #333;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.carouselArrow:hover {
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
