@@ -1,13 +1,13 @@
 import { useState, useEffect, useRef } from "react";
 import styles from "./PromotionalBanner.module.css";
-import promotional_banner_1 from "../../../assets/images/promotional_banner_1.png";
-import promotional_banner_2 from "../../../assets/images/promotional_banner_2.png";
+import promotionalBanner1 from "../../../assets/images/promotionalBanner/promotionalBanner1.png";
+import promotionalBanner2 from "../../../assets/images/promotionalBanner/promotionalBanner2.png";
 
 const slides = [
-  { id: 1, src: promotional_banner_1 },
-  { id: 2, src: promotional_banner_2 },
-  { id: 3, src: promotional_banner_1 },
-  { id: 4, src: promotional_banner_2 },
+  { id: 1, src: promotionalBanner1 },
+  { id: 2, src: promotionalBanner2 },
+  { id: 3, src: promotionalBanner1 },
+  { id: 4, src: promotionalBanner2 },
 ];
 
 export const PromotionalBanner = () => {
