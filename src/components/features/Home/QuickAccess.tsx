@@ -1,8 +1,8 @@
-import { AmbulanceIcon } from "../../../assets/icons/AmbulanceIcon";
-import DoctorsIcon from "../../../assets/icons/DoctorsIcon";
-import { HospitalsIcon } from "../../../assets/icons/HospitalsIcon";
-import { LabsIcon } from "../../../assets/icons/LabsIcon";
-import { MedicalStoreIcon } from "../../../assets/icons/MedicalStoreIcon";
+import { AmbulanceIcon } from "../../../assets/icons/QuickAccess/AmbulanceIcon";
+import DoctorsIcon from "../../../assets/icons/QuickAccess/DoctorsIcon";
+import { HospitalsIcon } from "../../../assets/icons/QuickAccess/HospitalsIcon";
+import { LabsIcon } from "../../../assets/icons/QuickAccess/LabsIcon";
+import { MedicalStoreIcon } from "../../../assets/icons/QuickAccess/MedicalStoreIcon";
 import SearchIcon from "../../../assets/icons/SearchIcon";
 import { Button } from "../../common/Button";
 import { QuickAccessCards } from "../../common/QuickAccessCards";
