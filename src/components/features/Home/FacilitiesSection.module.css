@@ -1,0 +1,57 @@
+.familiesSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f5f9ff;
+  padding: 50px 100px;
+  flex-wrap: wrap;
+  gap: 150px;
+}
+
+.textContent {
+  flex: 1;
+}
+
+.subHeading {
+  color: #2aa7ff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+.heading {
+  font-size: 3rem;
+  color: #1b3c74;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.description {
+  color: #77829d;
+  line-height: 2.5;
+  font-size: 1.1rem;
+}
+
+.cardsContainer {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+  justify-items: center;
+}
+
+.card {
+  width: 100%;
+  max-width: 320px;
+}
+
+.cardsContainer .card:nth-child(1),
+.cardsContainer .card:nth-child(3) {
+  transform: translateY(-20px);
+}
+
+.cardsContainer .card:nth-child(2),
+.cardsContainer .card:nth-child(4) {
+  transform: translateY(20px);
+}
