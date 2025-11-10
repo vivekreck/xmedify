@@ -8,6 +8,7 @@ import { PatientCaringSection } from "../components/features/Home/PatientCaringS
 import { NewsSection } from "../components/features/Home/NewsSection";
 import { FacilitiesSection } from "../components/features/Home/FacilitiesSection";
 import { FAQSection } from "../components/features/Home/FAQSection";
+import { CTASection } from "../components/features/Home/CTASection";
 
 const Home = () => {
   return (
@@ -22,6 +23,7 @@ const Home = () => {
       <NewsSection />
       <FacilitiesSection />
       <FAQSection />
+      <CTASection />
     </div>
   );
 };
