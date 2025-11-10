@@ -5,6 +5,7 @@ import { PromotionalBanner } from "../components/features/Home/PromotionalBanner
 import { SpecializationGrid } from "../components/features/Home/SpecializationGrid";
 import { DoctorGrid } from "../components/features/Home/DoctorGrid";
 import { PatientCaringSection } from "../components/features/Home/PatientCaringSection";
+import { NewsSection } from "../components/features/Home/NewsSection";
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
       <SpecializationGrid />
       <DoctorGrid />
       <PatientCaringSection />
+      <NewsSection />
     </div>
   );
 };

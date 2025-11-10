@@ -1,0 +1,58 @@
+.card {
+  margin: 0;
+  padding: 0;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.cardImage img {
+  width: 100%;
+}
+
+.cardContent {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.cardMeta {
+  color: #77829d;
+}
+
+.category {
+  margin-right: 10px;
+}
+
+.date {
+  margin-left: 10px;
+}
+
+.cardTitle {
+  color: #1b3c74;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 12px;
+
+  text-align: left;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+}
+
+.cardAuthor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.authorAvatar {
+  width: 28px;
+}
+
+.authorName {
+  font-size: 15px;
+  font-weight: 500;
+}
