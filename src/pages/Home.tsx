@@ -7,6 +7,7 @@ import { DoctorGrid } from "../components/features/Home/DoctorGrid";
 import { PatientCaringSection } from "../components/features/Home/PatientCaringSection";
 import { NewsSection } from "../components/features/Home/NewsSection";
 import { FacilitiesSection } from "../components/features/Home/FacilitiesSection";
+import { FAQSection } from "../components/features/Home/FAQSection";
 
 const Home = () => {
   return (
@@ -20,6 +21,7 @@ const Home = () => {
       <PatientCaringSection />
       <NewsSection />
       <FacilitiesSection />
+      <FAQSection />
     </div>
   );
 };
