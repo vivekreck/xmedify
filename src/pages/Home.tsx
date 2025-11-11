@@ -9,6 +9,7 @@ import { NewsSection } from "../components/features/Home/NewsSection";
 import { FacilitiesSection } from "../components/features/Home/FacilitiesSection";
 import { FAQSection } from "../components/features/Home/FAQSection";
 import { CTASection } from "../components/features/Home/CTASection";
+import Footer from "../components/layout/Footer";
 
 const Home = () => {
   return (
@@ -24,6 +25,7 @@ const Home = () => {
       <FacilitiesSection />
       <FAQSection />
       <CTASection />
+      <Footer />
     </div>
   );
 };
