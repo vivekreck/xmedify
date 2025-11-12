@@ -2,47 +2,50 @@ import type React from "react";
 import logo from "../../assets/icons/logo.png";
 import { Button } from "../common/Button";
 import styles from "./Navbar.module.css";
+import { Link, useLocation } from "react-router-dom";
 
 export const Navbar: React.FC = () => {
+  const location = useLocation();
+
   return (
     <nav className={styles.navbar}>
       <div className={styles.navbarContainer}>
-        <a href="/" className={styles.navbarLogo}>
+        <Link to="/" className={styles.navbarLogo}>
           <img src={logo} alt="Logo" className={styles.logoImage} />
           <div className={styles.logoText}>Medify</div>
-        </a>
+        </Link>
         <ul className={styles.navbarMenu}>
-          <li className={styles.navbarItem}>
-            <a href="/" className={styles.navbarLink}>
+          <li className={`${styles.navbarItem} ${location.pathname === "/finddoctors" ? styles.active : ""}`}>
+            <Link to="/finddoctors" className={styles.navbarLink}>
               Find Doctors
-            </a>
+            </Link>
           </li>
-          <li className={styles.navbarItem}>
-            <a href="/" className={styles.navbarLink}>
+          <li className={`${styles.navbarItem} ${location.pathname === "/hospitals" ? styles.active : ""}`}>
+            <Link to="/hospitals" className={styles.navbarLink}>
               Hospitals
-            </a>
+            </Link>
           </li>
-          <li className={styles.navbarItem}>
-            <a href="/" className={styles.navbarLink}>
+          <li className={`${styles.navbarItem} ${location.pathname === "/medicines" ? styles.active : ""}`}>
+            <Link to="/medicines" className={styles.navbarLink}>
               Medicines
-            </a>
+            </Link>
           </li>
-          <li className={styles.navbarItem}>
-            <a href="/" className={styles.navbarLink}>
+          <li className={`${styles.navbarItem} ${location.pathname === "/surgeries" ? styles.active : ""}`}>
+            <Link to="/surgeries" className={styles.navbarLink}>
               Surgeries
-            </a>
+            </Link>
           </li>
-          <li className={styles.navbarItem}>
-            <a href="/" className={styles.navbarLink}>
+          <li className={`${styles.navbarItem} ${location.pathname === "/software" ? styles.active : ""}`}>
+            <Link to="/software" className={styles.navbarLink}>
               Software for Provider
-            </a>
+            </Link>
           </li>
-          <li className={styles.navbarItem}>
-            <a href="/" className={styles.navbarLink}>
+          <li className={`${styles.navbarItem} ${location.pathname === "/facilities" ? styles.active : ""}`}>
+            <Link to="/facilities" className={styles.navbarLink}>
               Facilities
-            </a>
+            </Link>
           </li>
-          <li className={styles.navbarItem}>
+          <li className={`${styles.navbarItem} ${location.pathname === "/" ? styles.active : ""}`}>
             <Button>My Bookings</Button>
           </li>
         </ul>

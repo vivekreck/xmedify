@@ -52,9 +52,17 @@
   text-decoration: none;
   padding: 0.5rem 1rem;
   color: inherit;
-  transition: all 0.3s ease;
+  /* transition: all 0.3s ease; */
+  padding-bottom: 20px;
+  border-bottom: 4px solid;
+  border: hidden;
 }
 
 .navbarLink:hover {
-  color: #2aa8ff;
+  color: #2aa7ff;
+}
+
+.active .navbarLink {
+  color: #2aa7ff;
+  border-bottom: 4px solid;
 }
