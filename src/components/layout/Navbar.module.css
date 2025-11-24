@@ -1,4 +1,4 @@
-.navbar {
+.navbarHome {
   background-color: #e8f1ff78;
   height: 80px;
   display: flex;
@@ -6,17 +6,35 @@
   align-items: center;
 }
 
+.navbar {
+  height: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  background: linear-gradient(to right, #2aa7ff, #0c8ce5);
+  border-radius: 12px;
+}
+
+.navbarContainerHome {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 100px;
+}
+
 .navbarContainer {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  margin: 0 100px;
+  padding: 0 100px;
+  background-color: #ffffff;
 }
 
 .navbarLogo {
   text-decoration: none;
-  font-size: 2rem;
+  font-size: 4rem;
   font-weight: bold;
   cursor: pointer;
   align-items: center;
@@ -24,14 +42,14 @@
 }
 
 .logoImage {
-  max-width: 20px;
+  max-width: 25px;
 }
 
 .logoText {
   display: inline-block;
-  font-size: 16px;
+  font-size: 18px;
   color: #2aa8ff;
-  padding: 4px;
+  padding: 6px;
 }
 
 .navbarMenu {
@@ -50,12 +68,9 @@
 
 .navbarLink {
   text-decoration: none;
-  padding: 0.5rem 1rem;
+  padding: 1.7rem 1rem;
   color: inherit;
   /* transition: all 0.3s ease; */
-  padding-bottom: 20px;
-  border-bottom: 4px solid;
-  border: hidden;
 }
 
 .navbarLink:hover {
@@ -64,5 +79,5 @@
 
 .active .navbarLink {
   color: #2aa7ff;
-  border-bottom: 4px solid;
+  border-bottom: 8px solid;
 }

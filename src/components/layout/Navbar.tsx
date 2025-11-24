@@ -7,9 +7,10 @@ import { Link, useLocation } from "react-router-dom";
 export const Navbar: React.FC = () => {
   const location = useLocation();
 
+  const isHome = location.pathname === "/";
   return (
-    <nav className={styles.navbar}>
-      <div className={styles.navbarContainer}>
+    <nav className={isHome ? styles.navbarHome : styles.navbar}>
+      <div className={isHome ? styles.navbarContainerHome : styles.navbarContainer}>
         <Link to="/" className={styles.navbarLogo}>
           <img src={logo} alt="Logo" className={styles.logoImage} />
           <div className={styles.logoText}>Medify</div>
