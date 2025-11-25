@@ -1,0 +1,15 @@
+.searchContainer {
+  display: flex;
+  align-items: center;
+  margin: 0px 100px;
+  padding: 25px 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  justify-content: space-between;
+  gap: 15px;
+  background-color: white;
+  width: 85%;
+
+  position: absolute;
+  margin-top: -45px;
+}

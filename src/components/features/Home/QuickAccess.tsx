@@ -26,8 +26,8 @@ export const QuickAccess = () => {
     <section className={styles.quickAccessSection}>
       {/* Search Fields */}
       <div className={styles.searchContainer}>
-        <SearchInput placeholder="State" handleSearch={handleSearch} />
-        <SearchInput placeholder="City" handleSearch={handleSearch} />
+        <SearchInput placeholder="State" handleSearch={handleSearch} style={{ margin: "auto" }} icon={<SearchIcon />} />
+        <SearchInput placeholder="City" handleSearch={handleSearch} style={{ margin: "auto" }} icon={<SearchIcon />} />
         <Button>
           <SearchIcon color="#fff" height="15" width="15" /> Search
         </Button>

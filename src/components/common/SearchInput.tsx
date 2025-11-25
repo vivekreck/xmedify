@@ -1,18 +1,17 @@
-import React from "react";
+import React, { type ReactNode } from "react";
 import styles from "./SearchInput.module.css";
-import SearchIcon from "../../assets/icons/SearchIcon";
 
 interface SearchInputProps {
   placeholder: string;
   handleSearch: (searchTerm: string) => void;
+  style?: React.CSSProperties;
+  icon: ReactNode;
 }
 
-const SearchInput: React.FC<SearchInputProps> = ({ placeholder, handleSearch }) => {
+const SearchInput: React.FC<SearchInputProps> = ({ placeholder, handleSearch, style, icon }) => {
   return (
-    <div className={styles.searchContainer}>
-      <div className={styles.searchIcon}>
-        <SearchIcon />
-      </div>
+    <div className={styles.searchContainer} style={style}>
+      <div className={styles.searchIcon}>{icon}</div>
       <input
         type="text"
         className={styles.searchInput}
