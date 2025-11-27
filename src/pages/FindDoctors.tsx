@@ -1,3 +1,4 @@
+import { MedicalCenterDirectory } from "../components/features/FindDoctors/MedicalCenterDirectory";
 import { SearchSection } from "../components/features/FindDoctors/SearchSection";
 import { CTASection } from "../components/features/Home/CTASection";
 import { FAQSection } from "../components/features/Home/FAQSection";
@@ -9,6 +10,7 @@ export const FindDoctors = () => {
     <div>
       <Header />
       <SearchSection />
+      <MedicalCenterDirectory />
       <FAQSection />
       <CTASection />
       <Footer />

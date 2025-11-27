@@ -1,0 +1,93 @@
+.card {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 35px 25px;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.05);
+  /* width: 100%; */
+  /* max-width: 820px; */
+  margin: 10px 0px;
+}
+
+.leftSection {
+  display: flex;
+  gap: 16px;
+}
+
+.iconWrapper img {
+  width: 130px;
+  height: 130px;
+  object-fit: contain;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 38px;
+  margin-bottom: 15px;
+  color: #14bef0;
+}
+
+.location {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: -8px;
+  color: #414146;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #414146;
+  margin-bottom: -5px;
+}
+
+.freeTag {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #02a401;
+}
+
+.freeTag div {
+  display: inline;
+  font-size: 13px;
+  font-weight: 600;
+  color: #414146;
+}
+
+.strike {
+  text-decoration: line-through;
+  color: #787887;
+}
+
+.likes {
+  margin-top: 6px;
+  background: #00a500;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 13px;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  color: white;
+}
+
+.rightSection {
+  text-align: center;
+  letter-spacing: 0.4px;
+}
+
+.available {
+  color: #01a400;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
