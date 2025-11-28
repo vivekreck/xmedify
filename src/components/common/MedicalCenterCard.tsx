@@ -35,9 +35,11 @@ const MedicalCenterCard: React.FC = () => {
             <p className={styles.freeTag}>
               FREE <span className={styles.strike}>₹550</span> <div>Consultation fee at clinic</div>
             </p>
-            <div className={styles.likes}>
-              <ThumbIcon /> 5
-            </div>
+            {!showSlots && (
+              <div className={styles.likes}>
+                <ThumbIcon /> 5
+              </div>
+            )}
           </div>
         </div>
 
