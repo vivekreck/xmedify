@@ -2,12 +2,17 @@ import type React from "react";
 import logo from "../../assets/icons/logo.png";
 import { Button } from "../common/Button";
 import styles from "./Navbar.module.css";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 export const Navbar: React.FC = () => {
   const location = useLocation();
+  const navigate = useNavigate();
 
   const isHome = location.pathname === "/";
+
+  function handleClick() {
+    navigate("/mybookings");
+  }
   return (
     <nav className={isHome ? styles.navbarHome : styles.navbar}>
       <div className={isHome ? styles.navbarContainerHome : styles.navbarContainer}>
@@ -47,7 +52,7 @@ export const Navbar: React.FC = () => {
             </Link>
           </li>
           <li className={`${styles.navbarItem} ${location.pathname === "/" ? styles.active : ""}`}>
-            <Button>My Bookings</Button>
+            <Button onClick={handleClick}>My Bookings</Button>
           </li>
         </ul>
       </div>

@@ -1,0 +1,33 @@
+.wrapper {
+  position: relative;
+  height: 150px;
+  padding: 0px 100px;
+}
+
+.inner {
+  position: absolute;
+  top: -45px;
+  left: 100px;
+  right: 100px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.pageHeading {
+  color: white;
+  margin-top: 0px;
+  margin-left: 80px;
+}
+
+.searchContainer {
+  display: flex;
+  align-items: center;
+  padding: 25px 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  background-color: white;
+  gap: 15px;
+  width: 70%;
+}
