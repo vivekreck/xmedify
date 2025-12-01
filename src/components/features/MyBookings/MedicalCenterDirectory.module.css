@@ -1,0 +1,28 @@
+.page {
+  padding: 110px 100px;
+  background-color: #f5f9ff;
+}
+
+.pageSub {
+  color: #787887;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.pageSub img {
+  margin-right: 20px;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 8fr 4fr;
+  width: 100%;
+  gap: 50px;
+}
+
+.leftSection {
+  display: flex;
+  flex-direction: column;
+}

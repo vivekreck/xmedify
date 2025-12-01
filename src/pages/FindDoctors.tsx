@@ -1,4 +1,4 @@
-import { MedicalCenterDirectory } from "../components/features/FindDoctors/MedicalCenterDirectory";
+import { MedicalCenterDirectory } from "../components/features/MyBookings/MedicalCenterDirectory";
 import { SearchSection } from "../components/features/FindDoctors/SearchSection";
 import { CTASection } from "../components/features/Home/CTASection";
 import { FAQSection } from "../components/features/Home/FAQSection";
