@@ -10,9 +10,6 @@ export const Navbar: React.FC = () => {
 
   const isHome = location.pathname === "/";
 
-  function handleClick() {
-    navigate("/mybookings");
-  }
   return (
     <nav className={isHome ? styles.navbarHome : styles.navbar}>
       <div className={isHome ? styles.navbarContainerHome : styles.navbarContainer}>
@@ -21,8 +18,8 @@ export const Navbar: React.FC = () => {
           <div className={styles.logoText}>Medify</div>
         </Link>
         <ul className={styles.navbarMenu}>
-          <li className={`${styles.navbarItem} ${location.pathname === "/finddoctors" ? styles.active : ""}`}>
-            <Link to="/finddoctors" className={styles.navbarLink}>
+          <li className={`${styles.navbarItem} ${location.pathname === "/find-doctors" ? styles.active : ""}`}>
+            <Link to="/find-doctors" className={styles.navbarLink}>
               Find Doctors
             </Link>
           </li>
@@ -52,7 +49,7 @@ export const Navbar: React.FC = () => {
             </Link>
           </li>
           <li className={`${styles.navbarItem} ${location.pathname === "/" ? styles.active : ""}`}>
-            <Button onClick={handleClick}>My Bookings</Button>
+            <Button onClick={() => navigate("/my-bookings")}>My Bookings</Button>
           </li>
         </ul>
       </div>

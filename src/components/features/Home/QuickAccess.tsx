@@ -1,3 +1,6 @@
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import { AmbulanceIcon } from "../../../assets/icons/QuickAccess/AmbulanceIcon";
 import DoctorsIcon from "../../../assets/icons/QuickAccess/DoctorsIcon";
 import { HospitalsIcon } from "../../../assets/icons/QuickAccess/HospitalsIcon";
@@ -10,9 +13,42 @@ import SearchInput from "../../common/SearchInput";
 import styles from "./QuickAccess.module.css";
 
 export const QuickAccess = () => {
-  function handleSearch(searchTerm: string) {
-    console.log(searchTerm);
-  }
+  const navigate = useNavigate();
+
+  const [states, setStates] = useState<string[]>([]);
+  const [cities, setCities] = useState<string[]>([]);
+
+  const [selectedState, setSelectedState] = useState("");
+  const [selectedCity, setSelectedCity] = useState("");
+
+  const [stateDropdownOpen, setStateDropdownOpen] = useState(false);
+  const [cityDropdownOpen, setCityDropdownOpen] = useState(false);
+
+  useEffect(() => {
+    fetch("https://meddata-backend.onrender.com/states")
+      .then((res) => res.json())
+      .then((data) => setStates(data))
+      .catch((err) => console.log("Error fetching states:", err));
+  }, []);
+  useEffect(() => {
+    if (!selectedState) return;
+    setSelectedCity("");
+
+    fetch(`https://meddata-backend.onrender.com/cities/${selectedState}`)
+      .then((res) => res.json())
+      .then((data) => setCities(data))
+      .catch((err) => console.log("Error fetching cities:", err));
+  }, [selectedState]);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!selectedState || !selectedCity) {
+      alert("Please select both State and City");
+      return;
+    }
+    navigate(`/find-doctors?state=${selectedState}&city=${selectedCity}`);
+  };
 
   const quickAccessItems = [
     { icon: <DoctorsIcon />, title: "Doctors", isActive: false },
@@ -25,13 +61,74 @@ export const QuickAccess = () => {
   return (
     <section className={styles.quickAccessSection}>
       {/* Search Fields */}
-      <div className={styles.searchContainer}>
-        <SearchInput placeholder="State" handleSearch={handleSearch} style={{ margin: "auto" }} icon={<SearchIcon />} />
-        <SearchInput placeholder="City" handleSearch={handleSearch} style={{ margin: "auto" }} icon={<SearchIcon />} />
-        <Button>
+      <form onSubmit={handleSubmit} className={styles.searchContainer}>
+        {/* State */}
+        <div style={{ position: "relative", width: "30%" }}>
+          <SearchInput
+            placeholder="State"
+            value={selectedState}
+            icon={<SearchIcon />}
+            readOnly
+            onFocus={() => {
+              setStateDropdownOpen(true);
+              setCityDropdownOpen(false);
+            }}
+          />
+
+          {stateDropdownOpen && (
+            <div id="state" className={styles.dropdownBox}>
+              {states.map((st) => (
+                <div
+                  key={st}
+                  className={styles.dropdownItem}
+                  onClick={() => {
+                    setSelectedState(st);
+                    setStateDropdownOpen(false);
+                  }}
+                >
+                  {st}
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+
+        {/* City */}
+        <div style={{ position: "relative", width: "30%" }}>
+          <SearchInput
+            placeholder="City"
+            value={selectedCity}
+            icon={<SearchIcon />}
+            readOnly
+            onFocus={() => {
+              setCityDropdownOpen(true);
+              setStateDropdownOpen(false);
+            }}
+          />
+
+          {cityDropdownOpen && (
+            <div id="city" className={styles.dropdownBox}>
+              {cities.map((city) => (
+                <div
+                  key={city}
+                  className={styles.dropdownItem}
+                  onClick={() => {
+                    setSelectedCity(city);
+                    setCityDropdownOpen(false);
+                  }}
+                >
+                  {city}
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+
+        {/* SEARCH BUTTON */}
+        <Button type="submit" id="searchBtn">
           <SearchIcon color="#fff" height="15" width="15" /> Search
         </Button>
-      </div>
+      </form>
 
       {/* Quick Access Section */}
       <div className={styles.quickAccessTitle}>You may be looking for</div>

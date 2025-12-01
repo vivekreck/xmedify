@@ -3,7 +3,11 @@ import styles from "./MedicalCenterCard.module.css";
 import { Button } from "./Button";
 import { HospitalInfoCard } from "./HospitalInfoCard";
 
-const MedicalCenterCard: React.FC = () => {
+interface Props {
+  hospital: any;
+}
+
+const MedicalCenterCard: React.FC<Props> = ({ hospital }) => {
   const [showSlots, setShowSlots] = useState(false);
   const [selectedDate, setSelectedDate] = useState(0);
   const [selectedSlot, setSelectedSlot] = useState<string | null>(null);
@@ -23,54 +27,52 @@ const MedicalCenterCard: React.FC = () => {
   return (
     <div className={styles.card}>
       <div className={styles.mainSection}>
-        <HospitalInfoCard showSlots={showSlots} />
+        <HospitalInfoCard showSlots={showSlots} hospital={hospital} />
 
         <div className={styles.rightSection}>
           <p className={styles.available}>Available Today</p>
-          <Button onClick={() => setShowSlots((curr) => !curr)}>
-            {showSlots ? "Hide Booking Interface" : "Book FREE Center Visit"}
-          </Button>
+          <Button onClick={() => setShowSlots((curr) => !curr)}>Book FREE Center Visit</Button>
         </div>
       </div>
 
-      {/* Date Selection */}
       {showSlots && (
-        <div className={styles.dateSelector}>
-          <button className={styles.navButton}>‹</button>
-          {dates.map((date, index) => (
-            <div
-              key={index}
-              onClick={() => setSelectedDate(index)}
-              className={`${styles.dateOption} ${selectedDate === index ? styles.dateActive : ""}`}
-            >
-              <div className={styles.dayName}>{date.day}</div>
-              <div className={styles.slotsCount}>{date.slots}</div>
-            </div>
-          ))}
-          <button className={styles.navButton}>›</button>
-        </div>
-      )}
-
-      {/* Time Slots */}
-      {showSlots && (
-        <div className={styles.timeSlotsContainer}>
-          {Object.entries(timeSlots).map(([period, slots]) => (
-            <div key={period} className={styles.timeSlotSection}>
-              <h4 className={styles.periodTitle}>{period}</h4>
-              <div className={styles.slotsGrid}>
-                {slots.map((slot, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setSelectedSlot(slot)}
-                    className={`${styles.slotButton} ${selectedSlot === slot ? styles.slotActive : ""}`}
-                  >
-                    {slot}
-                  </button>
-                ))}
+        <>
+          {/* Date Selector */}
+          <div className={styles.dateSelector}>
+            <button className={styles.navButton}>‹</button>
+            {dates.map((date, index) => (
+              <div
+                key={index}
+                onClick={() => setSelectedDate(index)}
+                className={`${styles.dateOption} ${selectedDate === index ? styles.dateActive : ""}`}
+              >
+                <p className={styles.dayName}>{date.day}</p>
+                <div className={styles.slotsCount}>{date.slots}</div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+            <button className={styles.navButton}>›</button>
+          </div>
+
+          {/* Time Slots */}
+          <div className={styles.timeSlotsContainer}>
+            {Object.entries(timeSlots).map(([period, slots]) => (
+              <div key={period} className={styles.timeSlotSection}>
+                <p className={styles.periodTitle}>{period}</p>
+                <div className={styles.slotsGrid}>
+                  {slots.map((slot, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setSelectedSlot(slot)}
+                      className={`${styles.slotButton} ${selectedSlot === slot ? styles.slotActive : ""}`}
+                    >
+                      {slot}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </>
       )}
     </div>
   );

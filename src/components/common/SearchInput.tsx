@@ -3,12 +3,14 @@ import styles from "./SearchInput.module.css";
 
 interface SearchInputProps {
   placeholder: string;
-  handleSearch: (searchTerm: string) => void;
-  style?: React.CSSProperties;
+  value?: string;
   icon?: ReactNode;
+  style?: React.CSSProperties;
+  onFocus?: () => void;
+  readOnly?: boolean;
 }
 
-const SearchInput: React.FC<SearchInputProps> = ({ placeholder, handleSearch, style, icon }) => {
+const SearchInput: React.FC<SearchInputProps> = ({ placeholder, value, icon, style, onFocus, readOnly }) => {
   return (
     <div className={styles.searchContainer} style={style}>
       {icon && <div className={styles.searchIcon}>{icon}</div>}
@@ -16,7 +18,9 @@ const SearchInput: React.FC<SearchInputProps> = ({ placeholder, handleSearch, st
         type="text"
         className={styles.searchInput}
         placeholder={placeholder}
-        onChange={(e) => handleSearch(e.target.value)}
+        value={value}
+        onFocus={onFocus}
+        readOnly={readOnly}
       />
     </div>
   );

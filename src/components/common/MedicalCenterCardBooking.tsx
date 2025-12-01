@@ -2,11 +2,15 @@ import React from "react";
 import styles from "./MedicalCenterCardBooking.module.css";
 import { HospitalInfoCard } from "./HospitalInfoCard";
 
-const MedicalCenterCardBooking: React.FC = () => {
+interface Props {
+  hospital: any;
+}
+
+const MedicalCenterCardBooking: React.FC<Props> = ({ hospital }) => {
   return (
     <div className={styles.card}>
       <div className={styles.mainSection}>
-        <HospitalInfoCard showSlots={false} />
+        <HospitalInfoCard showSlots={false} hospital={hospital} />
 
         <div className={styles.rightSection}>
           <div className={styles.timeBox}>10:30 AM</div>
