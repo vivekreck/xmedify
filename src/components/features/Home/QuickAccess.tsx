@@ -75,19 +75,21 @@ export const QuickAccess = () => {
             }}
           />
 
-          <div id="state" className={`${styles.dropdownBox} ${!stateDropdownOpen ? styles.hidden : ""}`}>
-            {states.map((st) => (
-              <div
-                key={st}
-                className={styles.dropdownItem}
-                onClick={() => {
-                  setSelectedState(st);
-                  setStateDropdownOpen(false);
-                }}
-              >
-                {st}
-              </div>
-            ))}
+          <div id="state" className={styles.dropdownBox}>
+            <div className={`${styles.dropdownList} ${stateDropdownOpen ? styles.show : styles.hide}`}>
+              {states.map((st) => (
+                <div
+                  key={st}
+                  className={styles.dropdownItem}
+                  onClick={() => {
+                    setSelectedState(st);
+                    setStateDropdownOpen(false);
+                  }}
+                >
+                  {st}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
@@ -104,19 +106,21 @@ export const QuickAccess = () => {
             }}
           />
 
-          <div id="city" className={`${styles.dropdownBox} ${!cityDropdownOpen ? styles.hidden : ""}`}>
-            {cities.map((city) => (
-              <div
-                key={city}
-                className={styles.dropdownItem}
-                onClick={() => {
-                  setSelectedCity(city);
-                  setCityDropdownOpen(false);
-                }}
-              >
-                {city}
-              </div>
-            ))}
+          <div id="city" className={styles.dropdownBox}>
+            <div className={`${styles.dropdownList} ${cityDropdownOpen ? styles.show : styles.hide}`}>
+              {cities.map((city) => (
+                <div
+                  key={city}
+                  className={styles.dropdownItem}
+                  onClick={() => {
+                    setSelectedCity(city);
+                    setCityDropdownOpen(false);
+                  }}
+                >
+                  {city}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
