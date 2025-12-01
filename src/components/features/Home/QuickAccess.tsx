@@ -75,22 +75,20 @@ export const QuickAccess = () => {
             }}
           />
 
-          {stateDropdownOpen && (
-            <div id="state" className={styles.dropdownBox}>
-              {states.map((st) => (
-                <div
-                  key={st}
-                  className={styles.dropdownItem}
-                  onClick={() => {
-                    setSelectedState(st);
-                    setStateDropdownOpen(false);
-                  }}
-                >
-                  {st}
-                </div>
-              ))}
-            </div>
-          )}
+          <div id="state" className={`${styles.dropdownBox} ${!stateDropdownOpen ? styles.hidden : ""}`}>
+            {states.map((st) => (
+              <div
+                key={st}
+                className={styles.dropdownItem}
+                onClick={() => {
+                  setSelectedState(st);
+                  setStateDropdownOpen(false);
+                }}
+              >
+                {st}
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* City */}
@@ -106,22 +104,20 @@ export const QuickAccess = () => {
             }}
           />
 
-          {cityDropdownOpen && (
-            <div id="city" className={styles.dropdownBox}>
-              {cities.map((city) => (
-                <div
-                  key={city}
-                  className={styles.dropdownItem}
-                  onClick={() => {
-                    setSelectedCity(city);
-                    setCityDropdownOpen(false);
-                  }}
-                >
-                  {city}
-                </div>
-              ))}
-            </div>
-          )}
+          <div id="city" className={`${styles.dropdownBox} ${!cityDropdownOpen ? styles.hidden : ""}`}>
+            {cities.map((city) => (
+              <div
+                key={city}
+                className={styles.dropdownItem}
+                onClick={() => {
+                  setSelectedCity(city);
+                  setCityDropdownOpen(false);
+                }}
+              >
+                {city}
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* SEARCH BUTTON */}
