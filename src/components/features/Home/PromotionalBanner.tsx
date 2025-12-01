@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import styles from "./PromotionalBanner.module.css";
-import promotionalBanner1 from "@/assets/images/PromotionalBanner/promotionalBanner1.png";
-import promotionalBanner2 from "@/assets/images/PromotionalBanner/promotionalBanner2.png";
+import promotionalBanner1 from "@/assets/images/PromotionalBanner/Image.png";
+import promotionalBanner2 from "@/assets/images/PromotionalBanner/Image2.png";
 
 const slides = [
   { id: 1, src: promotionalBanner1 },
