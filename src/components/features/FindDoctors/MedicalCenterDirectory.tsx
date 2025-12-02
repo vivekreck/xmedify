@@ -33,9 +33,9 @@ export const MedicalCenterDirectory = () => {
   return (
     <section className={styles.page}>
       <div className={styles.pageHeader} role="banner" aria-label="results header">
-        <h2>
-          {centers.length} medical centers available in {state}
-        </h2>
+        <h1>
+          {centers.length} medical centers available in {city.toLowerCase()}
+        </h1>
         <div className={styles.pageSub}>
           <img src={vector} alt="vector" />
           Book appointments with minimum wait-time &amp; verified doctor details

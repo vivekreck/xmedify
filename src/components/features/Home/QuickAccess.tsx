@@ -18,7 +18,7 @@ export const QuickAccess = () => {
   const [states, setStates] = useState<string[]>([]);
   const [cities, setCities] = useState<string[]>([]);
 
-  const [selectedState, setSelectedState] = useState("");
+  const [selectedState, setSelectedState] = useState("Alaska");
   const [selectedCity, setSelectedCity] = useState("");
 
   const [stateDropdownOpen, setStateDropdownOpen] = useState(false);
@@ -78,7 +78,7 @@ export const QuickAccess = () => {
           <div id="state" className={styles.dropdownBox}>
             <div className={`${styles.dropdownList} ${stateDropdownOpen ? styles.show : styles.hide}`}>
               {states.map((st) => (
-                <div
+                <li
                   key={st}
                   className={styles.dropdownItem}
                   onClick={() => {
@@ -87,7 +87,7 @@ export const QuickAccess = () => {
                   }}
                 >
                   {st}
-                </div>
+                </li>
               ))}
             </div>
           </div>
@@ -109,7 +109,7 @@ export const QuickAccess = () => {
           <div id="city" className={styles.dropdownBox}>
             <div className={`${styles.dropdownList} ${cityDropdownOpen ? styles.show : styles.hide}`}>
               {cities.map((city) => (
-                <div
+                <li
                   key={city}
                   className={styles.dropdownItem}
                   onClick={() => {
@@ -118,7 +118,7 @@ export const QuickAccess = () => {
                   }}
                 >
                   {city}
-                </div>
+                </li>
               ))}
             </div>
           </div>
